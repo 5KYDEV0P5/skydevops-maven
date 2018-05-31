@@ -1,31 +1,49 @@
-Role Name
+SDMAVEN
 =========
 
-A brief description of the role goes here.
+Install and configures Apache maven.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+```common``` role is the dependency, which will setup the directory structure and install pre-requisites
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+```
+---
+# vars file for maven
+maven_version: 3.5.3
+maven_install_dir: /apps
+maven_src_tar: apache-maven-3.5.3-bin.zip
+maven_home: /apps/apache-maven-3.5.3
+maven_shared_home: /usr/shared/maven
+maven_repo_dir: /data/maven/repo
+maven_profile_sh: /etc/profile.d/maven.sh
+```
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+skydevops ```common``` Ansible Role is needed
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Use the following playbook:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```
+- hosts: test_servers
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: common
+    - role: sdjava
+      tags: java
+    - role: maven
+      tags: maven
+```
 
 License
 -------
@@ -35,4 +53,4 @@ Licensed under the Apache License V2.0. See the [LICENSE file](LICENSE) for deta
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Author: Shashi yebbare
