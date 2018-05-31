@@ -19,7 +19,7 @@
 - name: Maven global settings
   template: src=settings.xml.j2 dest={{ maven_shared_home }}/conf/settings.xml mode="u=rwx,g=r,o=r" owner=root
 - name: Setup Maven alternatives
-  template: src=alternatives.j2 dest=~/alternatives.sh mode="u=rwx,g=r,o=r"
+  template: src=alternatives-RedHat.j2 dest=~/alternatives.sh mode="u=rwx,g=r,o=r"
 - name: Apply Maven alternatives
   shell: ~/alternatives.sh
 - name: Delete alternatives script
