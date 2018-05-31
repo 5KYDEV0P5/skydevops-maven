@@ -13,4 +13,4 @@ galaxy_info:
     - 16.04
 
   galaxy_tags: []
-dependencies: []
+dependencies: [common]

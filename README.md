@@ -30,7 +30,7 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-BSD
+Licensed under the Apache License V2.0. See the [LICENSE file](LICENSE) for details.
 
 Author Information
 ------------------
