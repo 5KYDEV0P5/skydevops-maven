@@ -46,10 +46,10 @@ The data directory to store all maven app data
 ```
 maven_repo_dir: /data/maven/repo
 ```
+
 The following will setup the profile
 ```
 maven_profile_sh: /etc/profile.d/maven.sh
-```
 ```
 
 Dependencies
