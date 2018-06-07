@@ -1,88 +1,85 @@
-Ansible Role: MAVEN
-=========
+# Ansible Role: MAVEN
 
-Install and configures Apache maven on RedHat/CentOS and Debian/Ubuntu 
+[![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Build Status](https://travis-ci.org/5KYDEV0P5/skydevops-maven.svg?branch=master)](https://travis-ci.org/5KYDEV0P5/skydevops-maven)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/5KYDEV0P5/skydevops-maven.svg)](http://isitmaintained.com/project/5KYDEV0P5/skydevops-maven "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/5KYDEV0P5/skydevops-maven.svg)](http://isitmaintained.com/project/5KYDEV0P5/skydevops-maven "Percentage of issues still open")
 
-Requirements
-------------
-Requires ```EPEL``` repository for ```RedHat/CentOS``` machines, you can install the repository using the ```common``` Ansible role.
+## Description
+
+Install and configures Apache Maven on RedHat/CentOS and Debian/Ubuntu 
+
+## Requirements
+- Ansible >=2.4
+- EPEL Repo for RedHat/Centos, which can be installed automatically using the [common](https://github.com/5KYDEV0P5/common) ansible role.
+- Java which can be installed using the [skydevops-java](https://github.com/5KYDEV0P5/skydevops-java)
 
 
-Role Variables
---------------
-To install different version of Apache Maven, change the following variable
-```
-maven_version: 3.5.3
+
+## Role Variables
+All the variable that can be overridden are stored in [vars/main.yml](vars/main.yml) or [defaults/main.yml](defaults/main.yml) file as shown in the table below:
+
+| Name                	| Default Value                                                 	| Description                                                          	|
+|---------------------	|---------------------------------------------------------------	|----------------------------------------------------------------------	|
+| `main_rel`          	| : 3                                                           	| Major ver of Maven                                                   	|
+| `min_rel`           	| : 5                                                           	| Minor ver of Maven                                                   	|
+| `patch_rel`         	| : 3                                                           	| Patch ver of Maven                                                   	|
+| `maven_install_dir` 	| : /apps                                                       	| Install directory for maven                                          	|
+| `maven_src_tar`     	| : apache-maven-{{main_rel}}.{{min_rel}}.{{patch_rel}}-bin.zip 	| Apache Maven Archive                                                 	|
+| `maven_home`        	| : apache-maven-{{main_rel}}.{{min_rel}}.{{patch_rel}}         	| M2_HOME ENV variable                                                 	|
+| `maven_shared_home` 	| : /usr/shared/maven                                           	| Symlink to the installed Maven                                       	|
+| `maven_repo_dir`    	| : /data/maven/repo                                            	| Maven repo directory                                                 	|
+| `maven_profile_sh`  	| : /etc/profile.d/maven.sh                                     	| Jinja2 Template, which contains the info to source the ENV variables 	|
+
+## Dependencies
+
+- [common](https://github.com/5KYDEV0P5/common)
+- [java](https://github.com/5KYDEV0P5/skydevops-java)
+
+## Example Playbook and defaults
+
+### Playbook Default file locations based on playbook execution 
+
+```yaml
+{# The defaults PATHS where Ansible looks for the files #}
+When executing the playbook from the following path:
+$ cd /home/$USER/
+$ ansible-playbook {{playbook_dir}}/playbook.yml
+
+   /home/$USER/roles/{{ ansible_role }}/files/jdk-8u171-linux-x64.zip   
+   /home/$USER/roles/{{ ansible_role }}/jdk-8u171-linux-x64.zip   
+   /home/$USER/roles/{{ ansible_role }}/tasks/files/jdk-8u171-linux-x64.zip   
+   /home/$USER/roles/{{ ansible_role }}/tasks/jdk-8u171-linux-x64.zip   
+   /home/$USER/{{ playbook_dir }}/files/jdk-8u171-linux-x64.zip   
+   /home/$USER/{{ playbook_dir }}/jdk-8u171-linux-x64.zip
 ```
 
-Choose the directory in which Maven will be installed, ```default: /apps``` if undefined. The default directory structure and required packages will be created and installed using the ```common``` Ansible Playbook
-```
-maven_install_dir: /apps
-```
+### Use the following to run playbook
 
-The archive file has to be pre-downloaded and placed in one of the following folders 
-```
-- /home/$USER/ansible_roles/files
-- /home/$USER/ansible_roles/
-- /home/$USER/ansible_roles/maven/files
-- /home/$USER/ansible_roles/maven/tasks/files
-```
-The following variable will define the maven archive
-```
-maven_src_tar: apache-maven-3.5.3-bin.zip
-```
-
-Maven Home Environmental variable ```[M2_HOME]``` will be set using the variable, the path depends on the ```maven_install_dir```
-```
-maven_home: /apps/apache-maven-3.5.3
-```
-
-The variable will set the symlink for the installed Maven
-```
-maven_shared_home: /usr/shared/maven
-```
-
-The data directory to store all maven app data
-```
-maven_repo_dir: /data/maven/repo
-```
-
-The following will setup the profile
-```
-maven_profile_sh: /etc/profile.d/maven.sh
-```
-
-Dependencies
-------------
-
-skydevops ```common``` Ansible Role is needed, which creates the required directories and also install the required packages.
-
-Example Playbook
-----------------
-
-Use the following playbook:
-
-```
+```yaml
 - hosts: all
   become: yes
   gather_facts: yes
   roles:
-    - role: common
+    - role: 5KYDEV0P5.common
 
-- hosts: test_servers
+- hosts: testservers
   become: yes
   gather_facts: yes
   roles:
-    - role: sdjava
-    - role: maven
+    - role: 5KYDEV0P5.skydevops-java
+    - role: 5KYDEV0P5.skydevops-maven
 ```
 
-License
--------
+## License
 
 Licensed under the Apache License V2.0. See the [LICENSE file](LICENSE) for details.
 
-Author Information
-------------------
+## Author Information
 
-This role was created in 2018 by [Shashi Yebbare](https://www.skydevops.co.in/), author of [SkyDevops](https://www.skydevops.co.in/).
+You can find me on Twitter: [@skydevops](https://twitter.com/skydevops)
+You can find me on Facebook: [@skydevops](https://www.facebook.com/skydevops)
+
+## Contributors
+
+- Shashi Yebbare ([@skydevops](https://twitter.com/skydevops))
