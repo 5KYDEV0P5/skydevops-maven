@@ -30,7 +30,7 @@ All the variable that can be overridden are stored in [vars/main.yml](vars/main.
 | `maven_home`        	| : apache-maven-{{maven_version}}                              	| M2_HOME ENV variable                                                 	|
 | `maven_shared_home` 	| : /usr/shared/maven                                           	| Symlink to the installed Maven                                       	|
 | `maven_repo_dir`    	| : /data/maven/repo                                            	| Maven repo directory                                                 	|
-| `maven_profile_sh`  	| : /etc/profile.d/maven.sh                                     	| Jinja2 Template, which contains the info to source the ENV variables 	|
+| `maven_profile_sh`  	| : /etc/profile.d/maven.sh                                     	| Jinja2 Template,  contains the info <br>to source the ENV variables 	|
 
 ## Dependencies
 
