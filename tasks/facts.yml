@@ -32,13 +32,13 @@
 
 - name: Download Maven Binaries
   get_url:
-    dest: "{{maven_data_dir}}/{{maven_src_tar}}"
+    dest: "{{maven_data_dir}}"
     url: "{{maven_download_url}}"
   register: maven_zip_dld
   until: maven_zip_dld is succeeded
   retries: 5
   delay: 5
-  when: maven_archive_present == false
+  when: maven_archive_present.stat.exists == false
 
 
 

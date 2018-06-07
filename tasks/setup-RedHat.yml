@@ -3,7 +3,7 @@
 - name: Extract Maven to install directory
   become: true
   unarchive: 
-    src: "{{ maven_src_tar }}"
+    src: "{{maven_data_dir}}/{{maven_src_tar}}"
     dest: "{{ maven_install_dir }}" 
     mode: 0777 
     owner: root
