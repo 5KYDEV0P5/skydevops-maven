@@ -41,7 +41,7 @@ All the variable that can be overridden are stored in [vars/main.yml](vars/main.
 
 ### Playbook Default file locations based on playbook execution 
 
-```yaml
+```shell
 {# The defaults PATHS where Ansible looks for the files #}
 When executing the playbook from the following path:
 $ cd /home/$USER/
