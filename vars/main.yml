@@ -5,6 +5,7 @@ min_rel: 5
 patch_rel: 3
 maven_version: "{{main_rel}}.{{min_rel}}.{{patch_rel}}"
 maven_install_dir: /apps
+maven_data_dir: /data
 maven_src_tar: "apache-maven-{{maven_version}}-bin.zip"
 maven_home: "/apps/apache-maven-{{maven_version}}"
 maven_shared_home: /usr/shared/maven
