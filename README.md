@@ -74,7 +74,8 @@ $ ansible-playbook ${playbook_dir}/playbook.yml
 
 ## License
 
-Licensed under the Apache License V2.0. See the [LICENSE file](LICENSE) for details.
+- Licensed under the Apache License V2.0. 
+- See the [LICENSE file](LICENSE) for details.
 
 ## Author Information
 
