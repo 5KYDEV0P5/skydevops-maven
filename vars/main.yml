@@ -1,9 +1,12 @@
 ---
 # vars file for maven
-maven_version: 3.5.3
+main_rel: 3
+min_rel: 5
+patch_rel: 3
+maven_version: "{{main_rel}}.{{min_rel}}.{{patch_rel}}"
 maven_install_dir: /apps
-maven_src_tar: apache-maven-3.5.3-bin.zip
-maven_home: /apps/apache-maven-3.5.3
+maven_src_tar: "apache-maven-{{maven_version}}-bin.zip"
+maven_home: "/apps/apache-maven-{{maven_version}}"
 maven_shared_home: /usr/shared/maven
 maven_repo_dir: /data/maven/repo
 maven_profile_sh: /etc/profile.d/maven.sh
