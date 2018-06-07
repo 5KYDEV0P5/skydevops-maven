@@ -24,7 +24,7 @@
 #  Check if source file already existing
 - name: Check if source file already existing
   stat:
-    path: ""{{maven_profile_sh}}""
+    path: "{{maven_profile_sh}}"
   register: sourcefile_already_present
 
 # Check for alternatives
@@ -35,7 +35,7 @@
 
 - name: Check Setting file
   stat:
-    path: ""{{ maven_shared_home }}"/conf/settings.xml"
+    path: "{{ maven_shared_home }}/conf/settings.xml"
   register: settingsfile_already_present
 
 # Source the profile

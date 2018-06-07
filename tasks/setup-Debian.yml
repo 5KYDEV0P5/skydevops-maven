@@ -3,15 +3,15 @@
 - name: Extract Maven to install directory
   become: true
   unarchive: 
-    src: ""{{maven_data_dir}}"/"{{maven_src_tar}}""
-    dest: ""{{maven_install_dir}}""
+    src: "{{maven_data_dir}}/{{maven_src_tar}}"
+    dest: "{{maven_install_dir}}"
     mode: 0777 
     owner: root
 
 # Maven Shared Directory
 - name: Maven Shared Directory
   file:
-    path: ""{{maven_shared_home}}""
+    path: "{{maven_shared_home}}"
     state: directory
 
 # Shared symlink
@@ -25,7 +25,7 @@
 #  Check if source file already existing
 - name: Check if source file already existing
   stat:
-    path: ""{{maven_profile_sh}}""
+    path: "{{maven_profile_sh}}"
   register: sourcefile_already_present
 
 # Check for alternatives
@@ -36,14 +36,14 @@
 
 - name: Check Setting file
   stat:
-    path: ""{{ maven_shared_home }}"/conf/settings.xml"
+    path: "{{ maven_shared_home }}/conf/settings.xml"
   register: settingsfile_already_present
 
 
 
 # Source the profile
 - name: Source Maven profile
-  shell: . ""{{ maven_profile_sh }}""
+  shell: . "{{ maven_profile_sh }}"
   when: sourcefile_already_present.stat.exists == false
   
 # Settings
