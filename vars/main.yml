@@ -1,7 +1,7 @@
 ---
 # vars file for maven
 main_rel: 3
-min_rel: 5
+min_rel: 3
 patch_rel: 3
 maven_version: "{{main_rel}}.{{min_rel}}.{{patch_rel}}"
 maven_install_dir: /apps
