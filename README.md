@@ -24,9 +24,10 @@ All the variable that can be overridden are stored in [vars/main.yml](vars/main.
 | `main_rel`          	| : 3                                                           	| Major version of Maven                                                |
 | `min_rel`           	| : 5                                                           	| Minor version of Maven                                                |
 | `patch_rel`         	| : 3                                                           	| Patch version of Maven                                                |
+| `maven_version`.      | : {{main_rel}}.{{min_rel}}.{{patch_rel}}                          | Maven Version that will be installed                                  |
 | `maven_install_dir` 	| : /apps                                                       	| Install directory for maven                                          	|
-| `maven_src_tar`     	| : apache-maven-{{main_rel}}.{{min_rel}}.{{patch_rel}}-bin.zip 	| Apache Maven Archive                                                 	|
-| `maven_home`        	| : apache-maven-{{main_rel}}.{{min_rel}}.{{patch_rel}}         	| M2_HOME ENV variable                                                 	|
+| `maven_src_tar`     	| : apache-maven-{{maven_version}}-bin.zip 	                        | Apache Maven Archive                                                 	|
+| `maven_home`        	| : apache-maven-{{maven_version}}                              	| M2_HOME ENV variable                                                 	|
 | `maven_shared_home` 	| : /usr/shared/maven                                           	| Symlink to the installed Maven                                       	|
 | `maven_repo_dir`    	| : /data/maven/repo                                            	| Maven repo directory                                                 	|
 | `maven_profile_sh`  	| : /etc/profile.d/maven.sh                                     	| Jinja2 Template, which contains the info to source the ENV variables 	|
