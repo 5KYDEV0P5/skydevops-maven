@@ -44,15 +44,15 @@ All the variable that can be overridden are stored in [vars/main.yml](vars/main.
 ```sh
 # The defaults PATHS where Ansible looks for the files
 When executing the playbook from the following path:
-$ cd /home/$USER/
-$ ansible-playbook {{playbook_dir}}/playbook.yml
+$ cd /home/${USER}/
+$ ansible-playbook ${playbook_dir}/playbook.yml
 
-   /home/$USER/roles/{{ ansible_role }}/files/jdk-8u171-linux-x64.zip   
-   /home/$USER/roles/{{ ansible_role }}/jdk-8u171-linux-x64.zip   
-   /home/$USER/roles/{{ ansible_role }}/tasks/files/jdk-8u171-linux-x64.zip   
-   /home/$USER/roles/{{ ansible_role }}/tasks/jdk-8u171-linux-x64.zip   
-   /home/$USER/{{ playbook_dir }}/files/jdk-8u171-linux-x64.zip   
-   /home/$USER/{{ playbook_dir }}/jdk-8u171-linux-x64.zip
+   /home/${USER}/roles/${ansible_role}/files/jdk-8u171-linux-x64.zip   
+   /home/${USER}/roles/${ansible_role}/jdk-8u171-linux-x64.zip   
+   /home/${USER}/roles/${ansible_role}/tasks/files/jdk-8u171-linux-x64.zip   
+   /home/${USER}/roles/${ansible_role}/tasks/jdk-8u171-linux-x64.zip   
+   /home/${USER}/${playbook_dir}/files/jdk-8u171-linux-x64.zip   
+   /home/${USER}/${playbook_dir}/jdk-8u171-linux-x64.zip
 ```
 
 ### Use the following to run playbook
