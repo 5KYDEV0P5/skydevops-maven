@@ -18,12 +18,12 @@
 - name: Set internal vars for Maven 3.5.3
   set_fact:
     maven_download_url: "http://www-us.apache.org/dist/maven/maven-{{main_rel}}/{{maven_version}}/binaries/{{maven_src_tar}}"
-  when: "maven_version == 3.5.3"
+  when: maven_version == '3.5.3'
 
 - name: Set internal vars for archived maven releases
   set_fact:
     maven_download_url: "https://archive.apache.org/dist/maven/maven-{{main_rel}}/{{maven_version}}/binaries/{{maven_src_tar}}"
-  when: "maven_version|int != 3.5.3"
+  when: "maven_version|int <= '3.5.3'"
 
 - name: Check if archive already exists
   stat:
