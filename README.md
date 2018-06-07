@@ -21,9 +21,9 @@ All the variable that can be overridden are stored in [vars/main.yml](vars/main.
 
 | Name                	| Default Value                                                 	| Description                                                          	|
 |---------------------	|---------------------------------------------------------------	|----------------------------------------------------------------------	|
-| `main_rel`          	| : 3                                                           	| Major ver of Maven                                                   	|
-| `min_rel`           	| : 5                                                           	| Minor ver of Maven                                                   	|
-| `patch_rel`         	| : 3                                                           	| Patch ver of Maven                                                   	|
+| `main_rel`          	| : 3                                                           	| Major version of Maven                                                |
+| `min_rel`           	| : 5                                                           	| Minor version of Maven                                                |
+| `patch_rel`         	| : 3                                                           	| Patch version of Maven                                                |
 | `maven_install_dir` 	| : /apps                                                       	| Install directory for maven                                          	|
 | `maven_src_tar`     	| : apache-maven-{{main_rel}}.{{min_rel}}.{{patch_rel}}-bin.zip 	| Apache Maven Archive                                                 	|
 | `maven_home`        	| : apache-maven-{{main_rel}}.{{min_rel}}.{{patch_rel}}         	| M2_HOME ENV variable                                                 	|

@@ -1,11 +1,11 @@
 galaxy_info:
   author: Shashi Yebbare
-  description: Mvaen 3.x
+  description: Install and configure Apache Mvaen 3.x.x
   company: SKYDEVOPS
   license: license (Apache License V2.0)
   min_ansible_version: 2.4
   platforms:
-  - name: RedHat
+  - name: EL
     versions:
     - 7
   - name: Debian
@@ -13,4 +13,4 @@ galaxy_info:
     - 16.04
 
   galaxy_tags: []
-dependencies: [common]
+dependencies: [5KYDEV0P5.common, 5KYDEV0P5.skydevops-java]
