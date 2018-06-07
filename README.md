@@ -78,7 +78,7 @@ Licensed under the Apache License V2.0. See the [LICENSE file](LICENSE) for deta
 
 ## Author Information
 
-You can find me on Twitter: [@skydevops](https://twitter.com/skydevops)
+You can find me on Twitter: [@skydevops](https://twitter.com/skydevops)<br>
 You can find me on Facebook: [@skydevops](https://www.facebook.com/skydevops)
 
 ## Contributors
