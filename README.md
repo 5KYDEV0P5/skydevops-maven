@@ -7,7 +7,7 @@
 
 ## Description
 
-Install and configures Apache Maven on RedHat/CentOS and Debian/Ubuntu 
+Install and configures Apache Maven on RedHat/CentOS and Debian/Ubuntu.
 
 ## Requirements
 - Ansible >=2.4
@@ -24,9 +24,9 @@ All the variable that can be overridden are stored in [vars/main.yml](vars/main.
 | `main_rel`          	| : 3                                                           	| Major version of Maven                                                |
 | `min_rel`           	| : 5                                                           	| Minor version of Maven                                                |
 | `patch_rel`         	| : 3                                                           	| Patch version of Maven                                                |
-| `maven_version`.      | : {{main_rel}}.{{min_rel}}.{{patch_rel}}                          | Maven Version that will be installed                                  |
+| `maven_version`.      | : {{main_rel}}.{{min_rel}}.{{patch_rel}}                        | Maven Version that will be installed                                  |
 | `maven_install_dir` 	| : /apps                                                       	| Install directory for maven                                          	|
-| `maven_src_tar`     	| : apache-maven-{{maven_version}}-bin.zip 	                        | Apache Maven Archive                                                 	|
+| `maven_src_tar`     	| : apache-maven-{{maven_version}}-bin.zip 	                      | Apache Maven Archive                                                 	|
 | `maven_home`        	| : apache-maven-{{maven_version}}                              	| M2_HOME ENV variable                                                 	|
 | `maven_shared_home` 	| : /usr/shared/maven                                           	| Symlink to the installed Maven                                       	|
 | `maven_repo_dir`    	| : /data/maven/repo                                            	| Maven repo directory                                                 	|
