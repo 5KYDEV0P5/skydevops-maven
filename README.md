@@ -47,12 +47,12 @@ When executing the playbook from the following path:
 $ cd /home/${USER}/
 $ ansible-playbook ${playbook_dir}/playbook.yml
 
-   /home/${USER}/roles/${ansible_role}/files/jdk-8u171-linux-x64.zip   
-   /home/${USER}/roles/${ansible_role}/jdk-8u171-linux-x64.zip   
-   /home/${USER}/roles/${ansible_role}/tasks/files/jdk-8u171-linux-x64.zip   
-   /home/${USER}/roles/${ansible_role}/tasks/jdk-8u171-linux-x64.zip   
-   /home/${USER}/${playbook_dir}/files/jdk-8u171-linux-x64.zip   
-   /home/${USER}/${playbook_dir}/jdk-8u171-linux-x64.zip
+   /home/${USER}/roles/${ansible_role}/files/apache-maven-3.5.3-bin.zip   
+   /home/${USER}/roles/${ansible_role}/apache-maven-3.5.3-bin.zip   
+   /home/${USER}/roles/${ansible_role}/tasks/files/apache-maven-3.5.3-bin.zip   
+   /home/${USER}/roles/${ansible_role}/tasks/apache-maven-3.5.3-bin.zip   
+   /home/${USER}/${playbook_dir}/files/apache-maven-3.5.3-bin.zip   
+   /home/${USER}/${playbook_dir}/apache-maven-3.5.3-bin.zip
 ```
 
 ### Use the following to run playbook
