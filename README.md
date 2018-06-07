@@ -34,8 +34,8 @@ All the variable that can be overridden are stored in [vars/main.yml](vars/main.
 
 ## Dependencies
 
-- [common](https://github.com/5KYDEV0P5/common)
-- [java](https://github.com/5KYDEV0P5/skydevops-java)
+- Ansible [common](https://github.com/5KYDEV0P5/common) Role, to install required directory structure and packages.
+- Ansible [java](https://github.com/5KYDEV0P5/skydevops-java) Role, which installs and configures java from Oracle.
 
 ## Example Playbook and defaults
 
